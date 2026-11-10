@@ -1,0 +1,12 @@
+[Unit]
+Description=Nitro Sandbox default route
+After=fcnet.service
+Wants=fcnet.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/sb-net-setup.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Nitro Sandbox vsock code runner
+After=local-fs.target sb-net.service
+Wants=sb-net.service
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/runner.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
